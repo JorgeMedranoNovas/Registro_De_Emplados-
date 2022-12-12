@@ -4,22 +4,42 @@
     ViewBag.Title = "Index";
 }
 
+<div class="container">
+    <div class="col-md-12 d-flex justify-content-end">
+        <a href="/Vacaciones/Add" class="btn btn-primary">Agregar Vacaciones</a>
+    </div>
+</div>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <label for="id">Id: </label>
-    <input type="text" name="id" id="id" placeholder="Inserta el id"/>
 
-    <button type="submit" class="btn btn-primary">Buscar Vacaciones del empleado</button>
+    <div class="col-md-4 mt-4">
+        <div class="card">
+            <div class="card-header">Buscar</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="id" class="form-label">Empleado: </label>
+                    <select class="form-control" name="id" id="id">
+                        @foreach (var item in ViewBag.Empleados)
+                        {
+                        <option value="@item.IdEmpleado">@item.Nombre @item.Apellido</option>
+                        }
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary h-50 mt-3">Buscar Vacaciones del empleado</button>
+            </div>
+        </div>
+    </div>
 }
 
 
 @{ if (Model.Count > 0)
     {
-    <table class="table table-condensed table-hover">
+    <table class="table table-hover mt-4 border border-light border-2 shadow shadow-lg">
         <thead>
-            <tr>
+            <tr class="bg-primary text-white h-75 fw-bold">
                 <td>Nombre Empleado </td>
                 <td>Apellido Empleado </td>
                 <td>Fecha Inicio Vacaciones</td>

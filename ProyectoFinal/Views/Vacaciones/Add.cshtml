@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+<div class="card">
+    <div class="card-header bg-primary">Agregar Vacaciones</div>
+    <div class="card-body">
+        <form action="/Vacaciones/Add" method="post">
+            <div class="form-group">
+                <label for="EmpleadoId" class="form-label">Empleado: </label>
+                <select name="EmpleadoId" id="EmpleadoId" class="form-control">
+                    @{ if (ViewBag.Empleados.Count > 0 || ViewBag.Empleados != null)
+                        {
+
+                            foreach (ProyectoFinal.Models.Empleados empleados in ViewBag.Empleados)
+                            {
+                                <option value="@empleados.IdEmpleado">@empleados.Nombre @empleados.Apellido</option>
+                            }
+                        }
+                    }
+                </select>
+                <div class="form-group">
+                    <label for="FechaInicio">Fecha Inicio: </label>
+                    <input type="date" name="FechaInicio" id="FechaInicio" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="FechaFinal">Fecha Finalizacion: </label>
+                    <input type="date" name="FechaFinal" id="FechaFinal" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Agregar</button>
+            </div>
+        </form>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+

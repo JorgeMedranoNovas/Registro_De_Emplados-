@@ -4,13 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
+<div class="d-flex justify-content-between mt-4 mb-3">
+    <h2>Index</h2>
+    @Html.ActionLink("Create New", "Create",new { area=""},new { @class="btn btn-primary"})
+</div>
+<table class="table table-hover mt-4 border border-light border-2 shadow shadow-lg">
+    <tr class="bg-primary h-75 p-3 text-white">
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
@@ -50,7 +49,7 @@
             @Html.DisplayFor(modelItem => item.FechaNacimiento)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Sueldo)
+            @item.Sueldo.ToString("n2")
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpleado }) |
@@ -59,5 +58,28 @@
         </td>
     </tr>
 }
+<tr>
+    <td>
+
+    </td>
+    <td>
+
+    </td>
+    <td>
+
+    </td>
+    <td>
+
+    </td>
+    <td>
+
+    </td>
+    <td>
+        <span class="fw-bold">Nomina Total:</span> @ViewBag.SumAllSalary.ToString("n2")
+    </td>
+    <td>
+
+    </td>
+</tr>
 
 </table>

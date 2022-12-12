@@ -5,27 +5,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
+    <link href="~/Content/bootstrap/bootstrap.css"  rel="stylesheet"/>
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+      </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("EmpleApp", "Login", "Usuario", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            @Html.ActionLink("EmpleApp", "Login", "Usuario", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarScroll">
+                <ul ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     @{ if (Singleton.instance.IsLoggedIn)
                         {
-                            <li>@Html.ActionLink("Empleados", "Index", "Empleados")</li>
-                            <li>@Html.ActionLink("Vacaciones", "Index", "Vacaciones")</li>
-                            <li>@Html.ActionLink("Salir", "LogOut", "Usuario")</li>
+                            <li class="nav-item">@Html.ActionLink("Empleados", "Index", "Empleados",new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Vacaciones", "Index", "Vacaciones",new {area="" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Salir", "LogOut", "Usuario", new { area="" },new { @class = "nav-link" })</li>
 
                         }
                     }

@@ -135,11 +135,16 @@
     </Compile>
     <Compile Include="Helpers\PasswordEncryption.cs" />
     <Compile Include="Helpers\Singleton.cs" />
+    <Compile Include="Migrations\202212121704395_lkjj.cs" />
+    <Compile Include="Migrations\202212121704395_lkjj.Designer.cs">
+      <DependentUpon>202212121704395_lkjj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Empleados.cs" />
     <Compile Include="Models\EmpleadosDbContext.cs" />
     <Compile Include="Models\Vacaciones.cs" />
     <Compile Include="Models\ViewModel\LoginViewModel.cs" />
+    <Compile Include="Models\ViewModel\SaveVacacionesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,13 +152,57 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\bootstrap\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -185,6 +234,7 @@
     <Content Include="Views\Empleados\Index.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Vacaciones\Index.cshtml" />
+    <Content Include="Views\Vacaciones\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -201,6 +251,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202212121704395_lkjj.resx">
+      <DependentUpon>202212121704395_lkjj.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

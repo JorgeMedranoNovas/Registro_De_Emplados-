@@ -15,7 +15,7 @@ namespace ProyectoFinal.Models
         [Required]
         public string Apellido { get; set; }
         [Required]
-        public int Telefono { get; set; }
+        public string Telefono { get; set; }
         [Required]
         public string Direccion { get; set; }
         [Required]

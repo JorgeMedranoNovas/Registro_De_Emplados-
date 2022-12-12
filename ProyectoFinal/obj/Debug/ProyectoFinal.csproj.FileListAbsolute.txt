@@ -166,5 +166,5 @@ C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\Proyec
 C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.CopyComplete
 C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\ProyectoFinal.dll
 C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\ProyectoFinal.pdb
-C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\ProyectoFinal.Migrations.Ligration.resources
+C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\ProyectoFinal.Migrations.lkjj.resources
 C:\Users\admin\Source\Repos\Registro_De_Emplados-\ProyectoFinal\obj\Debug\ProyectoFinal.csproj.GenerateResource.cache

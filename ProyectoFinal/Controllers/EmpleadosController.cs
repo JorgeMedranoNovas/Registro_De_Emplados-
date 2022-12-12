@@ -27,7 +27,10 @@ namespace ProyectoFinal.Controllers
 
             }
 
-            return View(db.Empleados.ToList());
+            var empleados = db.Empleados.Where(e => e.Username != "admin").ToList();
+            ViewBag.SumAllSalary = empleados.Sum(e => e.Sueldo);
+
+            return View(empleados);
         }
 
         // GET: Empleados/Details/5
