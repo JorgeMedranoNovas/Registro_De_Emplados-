@@ -9,12 +9,24 @@ namespace ProyectoFinal.Models
     public class Empleados
     {
         [Key]
-        public int idEmpleado { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public int telefono { get; set; }
-        public string direccion { get; set; }
-        public int fechaNacimiento { get; set; }
-        public int sueldo { get; set; }
+        public int IdEmpleado { get; set; }
+        [Required]
+        public string Nombre { get; set; }
+        [Required]
+        public string Apellido { get; set; }
+        [Required]
+        public int Telefono { get; set; }
+        [Required]
+        public string Direccion { get; set; }
+        [Required]
+        public DateTime FechaNacimiento { get; set; }
+        [Required]
+        [Range(10000,9999999999,ErrorMessage ="Debes insertar un sueldo minimo de 10,000")]
+        public int Sueldo { get; set; }
+        [Required]
+        public string Username { get; set; }
+        [Required]
+        public string Password { get; set; }
+        public ICollection<Vacaciones> Vacaciones { get; set; }
     }
 }

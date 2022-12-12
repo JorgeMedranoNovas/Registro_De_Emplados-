@@ -6,23 +6,40 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ProyectoFinal.Helpers;
 using ProyectoFinal.Models;
 
 namespace ProyectoFinal.Controllers
 {
     public class EmpleadosController : Controller
     {
-        private EmpleadosDbContext db = new EmpleadosDbContext();
+        private readonly EmpleadosDbContext db = new EmpleadosDbContext();
 
         // GET: Empleados
         public ActionResult Index()
         {
+
+
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
+
             return View(db.Empleados.ToList());
         }
 
         // GET: Empleados/Details/5
         public ActionResult Details(int? id)
         {
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,6 +55,14 @@ namespace ProyectoFinal.Controllers
         // GET: Empleados/Create
         public ActionResult Create()
         {
+
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
+
             return View();
         }
 
@@ -46,10 +71,21 @@ namespace ProyectoFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idEmpleado,nombre,apellido,telefono,direccion,fechaNacimiento,sueldo")] Empleados empleados)
+        public ActionResult Create([Bind(Include = "IdEmpleado,Nombre,Apellido,Telefono,Direccion,FechaNacimiento,Sueldo,Username,Password")] Empleados empleados)
         {
+
+
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
+
             if (ModelState.IsValid)
             {
+                empleados.Password = PasswordEncryption.ComputeSHA256(empleados.Password);
+
                 db.Empleados.Add(empleados);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -80,6 +116,12 @@ namespace ProyectoFinal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "idEmpleado,nombre,apellido,telefono,direccion,fechaNacimiento,sueldo")] Empleados empleados)
         {
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(empleados).State = EntityState.Modified;
@@ -92,6 +134,15 @@ namespace ProyectoFinal.Controllers
         // GET: Empleados/Delete/5
         public ActionResult Delete(int? id)
         {
+
+
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -109,6 +160,15 @@ namespace ProyectoFinal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
+
+            if (!Singleton.instance.IsLoggedIn)
+            {
+
+                return RedirectToAction("Login", "Usuario");
+
+            }
+
             Empleados empleados = db.Empleados.Find(id);
             db.Empleados.Remove(empleados);
             db.SaveChanges();

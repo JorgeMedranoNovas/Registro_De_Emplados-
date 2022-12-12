@@ -1,0 +1,43 @@
+﻿@model  List<ProyectoFinal.Models.Vacaciones>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <label for="id">Id: </label>
+    <input type="text" name="id" id="id" placeholder="Inserta el id"/>
+
+    <button type="submit" class="btn btn-primary">Buscar Vacaciones del empleado</button>
+}
+
+
+@{ if (Model.Count > 0)
+    {
+    <table class="table table-condensed table-hover">
+        <thead>
+            <tr>
+                <td>Nombre Empleado </td>
+                <td>Apellido Empleado </td>
+                <td>Fecha Inicio Vacaciones</td>
+                <td>Fecha Termino Vacaciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProyectoFinal.Models.Vacaciones vacaciones in Model)
+            {
+
+            <tr>
+                <td>@vacaciones.Empleado.Nombre</td>
+                <td>@vacaciones.Empleado.Apellido</td>
+                <td>@vacaciones.FechaInicio</td>
+                <td>@vacaciones.FechaFinal</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    } }
+
